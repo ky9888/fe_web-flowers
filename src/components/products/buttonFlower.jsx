@@ -108,7 +108,7 @@ export default function ButtonFlower({ cartItem }) {
         className={`fixed 
            ${
              isOpen
-               ? "opacity-100 -translate-y-[105%] max-custom:-translate-y-[260%]  "
+               ? "opacity-100 -translate-y-[110%] max-custom:-translate-y-[265%]  "
                : "opacity-0 -translate-y-[400%]"
            } w-full h-[400px] transition-transform duration-700  z-40 left-0 items-center flex justify-center
             }`}
