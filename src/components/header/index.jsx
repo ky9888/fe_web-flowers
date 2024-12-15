@@ -622,7 +622,7 @@ export default function Header() {
       </div>
 
       <div
-        className={` flex items-center justify-between max-custom:px-3  px-[6%] py-4 bg-white w-full fixed top-0 z-20 shadow-lg transform transition-transform duration-1000 ${
+        className={` flex items-center justify-between max-lg:px-2 max-custom:px-2  px-[4%] py-4 bg-white w-full fixed top-0 z-20 shadow-lg transform transition-transform duration-1000 ${
           isScroll
             ? "-translate-y-[1px] opacity-100"
             : "-translate-y-full opacity-0 "
@@ -632,7 +632,7 @@ export default function Header() {
           <IoMenu onClick={handleToggleDropdownScroll} />
         </div>
 
-        <div className="flex space-x-[150px]">
+        <div className="flex space-x-[135px] max-xl:space-x-[30px] max-lg:space-x-0 ">
           <Link href={"/"}>
             <Image
               src={logo}
@@ -640,7 +640,7 @@ export default function Header() {
               height={100}
               quality={100}
               alt="logo"
-              className="max-custom:w-[180px]"
+              className="max-custom:w-[180px] max-xl:w-[210px] "
             />
           </Link>
           <div className="flex items-center space-x-4 max-lg:hidden">

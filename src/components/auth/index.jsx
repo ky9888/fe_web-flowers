@@ -89,10 +89,10 @@ function Auth() {
           >
             <div className="translate-x-1 hover:text-green-700">
               <div className="flex">
-                <span className="text-[22px] translate-x-1">
+                <span className="text-[22px] max-custom:text-[18px]  translate-x-1">
                   <FaRegUser />
                 </span>
-                <span className="text-[20px]">
+                <span className="text-[20px] max-custom:text-[18px] ">
                   <FaCaretDown />
                 </span>
               </div>
