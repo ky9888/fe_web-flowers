@@ -37,22 +37,22 @@ export default function CartClient() {
 
   return (
     <div className="mx-[6%] max-lg:mx-5">
-      <div className="flex justify-center text-[18px] my-14 text-slate-900  items-center">
-        <p>
-          <span className=" px-[6px] text-white mr-2 text-[15px]  bg-green-800 rounded-full ">
+      <div className="flex justify-center max-lg:text-[16px] text-[18px] my-14 text-slate-900  items-center">
+        <p className="max-custom:text-[28px] max-custom:font-medium">
+          <span className=" max-custom:hidden px-[6px] text-white mr-2 text-[15px]  bg-green-800 rounded-full ">
             1
           </span>
-          Giỏ hàng <span className="pl-1 pr-2 text-slate-400">{`>`}</span>
+          Giỏ hàng <span  className="pl-1 max-custom:hidden pr-2 text-slate-400">{`>`}</span>
         </p>
-        <p>
+        <p className="max-custom:hidden"> 
           <span className=" px-[6px] text-white mr-2 text-[15px] bg-gray-300  rounded-full ">
             2
           </span>
           Thông tin vận chuyển{" "}
           <span className="pl-1 pr-2 text-slate-400">{`>`}</span>
         </p>
-        <p>
-          <span className=" px-[6px] text-white mr-2 text-[15px] bg-gray-300 rounded-full ">
+        <p className="max-custom:hidden">
+          <span className="  px-[6px] text-white mr-2 text-[15px] bg-gray-300 rounded-full ">
             3
           </span>
           Hoàn tất đơn hàng
@@ -64,7 +64,7 @@ export default function CartClient() {
           <div className="font-bold flex  justify-between border-b-2 pb-1 ">
             <p className="w-[52%] ">SẢN PHẨM</p>
             <div className="flex   w-[48%]">
-              <p className="text-start max-custom:w-1/2  w-1/3">GIÁ</p>
+              <p className="text-start max-custom:w-1/2 max-custom:text-center  w-1/3">GIÁ</p>
               <p className="text-start w-1/3 max-custom:w-1/2 max-custom:text-end">SỐ LƯỢNG</p>
               <p className="text-end w-1/3 max-custom:hidden">TẠM TÍNH</p>
             </div>
@@ -93,7 +93,7 @@ export default function CartClient() {
                           height={100}
                           width={80}
                           quality={100}
-                          className="rounded-xl max-custom:h-[60px]"
+                          className="rounded-xl max-custom:h-[55px]"
                         />
                         <p className="ml-3 max-custom:text-[12px]">{item.name}</p>
                       </div>

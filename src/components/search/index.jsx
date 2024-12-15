@@ -127,7 +127,7 @@ export default function Search() {
         ref={openUseRef}
         className=" hover:cursor-pointer"
       >
-        <IoSearch className="text-[26px]" />
+        <IoSearch className="text-[26px] max-custom:text-[20px]" />
       </div>
 
       <div

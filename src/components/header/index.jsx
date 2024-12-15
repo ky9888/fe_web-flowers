@@ -174,7 +174,7 @@ export default function Header() {
     <div className="relative">
       <div ref={blackUseRef}></div>
       {/* Header cố định */}
-      <div className="flex   items-center justify-between z-50 px-[6%] max-xl:px-2 max-custom:px-2 py-4 bg-white w-full border-b">
+      <div className="flex   items-center justify-between z-50 px-[4%] max-xl:px-2 max-custom:px-2 py-4 bg-white w-full border-b">
         <div className={`text-[30px] cursor-pointer hidden max-lg:block`}>
           <IoMenu onClick={handleToggleDropdown} />
         </div>
@@ -310,7 +310,7 @@ export default function Header() {
           )}
         </div>
 
-        <div className="flex space-x-[150px] max-xl:space-x-[50px] max-lg:space-x-0 ">
+        <div className="flex space-x-[135px] max-xl:space-x-[30px] max-lg:space-x-0 ">
           <Link href={"/"}>
             <Image
               src={logo}
@@ -318,7 +318,7 @@ export default function Header() {
               height={100}
               quality={100}
               alt="logo"
-              className="max-custom:w-[200px]"
+              className="max-custom:w-[180px] max-xl:w-[210px] "
             />
           </Link>
           <div className="flex items-center space-x-4 max-lg:hidden">
@@ -468,7 +468,7 @@ export default function Header() {
               href={"/gio-hang"}
               className="relative cursor-pointer hover:text-green-700"
             >
-              <LuShoppingCart className="text-[24px]" />
+              <LuShoppingCart className="text-[24px] max-custom:text-[20px] " />
               <span className="bg-slate-600 rounded-full text-[10px] px-1 text-white top-[-7px] absolute right-[-5px] ">
                 {cartTotalQty}
               </span>
@@ -640,7 +640,7 @@ export default function Header() {
               height={100}
               quality={100}
               alt="logo"
-              className="max-custom:w-[200px]"
+              className="max-custom:w-[180px]"
             />
           </Link>
           <div className="flex items-center space-x-4 max-lg:hidden">
@@ -782,14 +782,14 @@ export default function Header() {
               <Search />
             </li>
             <li>
-              {/* <FaRegUser className="text-[22px]" /> */}
+             
               <Auth />
             </li>
             <Link
               href={"/gio-hang"}
               className="relative cursor-pointer hover:text-green-700"
             >
-              <LuShoppingCart className="text-[24px]" />
+              <LuShoppingCart className="text-[24px] max-custom:text-[20px]" />
               <span className="bg-slate-600 rounded-full text-[10px] px-1 text-white top-[-7px] absolute right-[-5px] ">
                 {cartTotalQty}
               </span>

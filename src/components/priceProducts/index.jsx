@@ -83,7 +83,7 @@ export default function ComponentProducts({ data }) {
                   </p>
                 </div>
                 <p className="text-center mt-5 text-green-900 skeleton3">
-                  {item.price} ₫
+                  {item.price.toLocaleString('vi-VN')} ₫
                 </p>
               </div>
             );

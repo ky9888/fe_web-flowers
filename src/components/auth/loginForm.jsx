@@ -1,4 +1,5 @@
 "use client";
+import Cookies from "js-cookie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useRef, useEffect } from "react";
 import { useFormik } from "formik";
@@ -59,12 +60,13 @@ function LoginForm({
           if (cartItem) {
             handleAddProducTocart(cartItem);
           }
-
+          
           localStorage.setItem("accessToken", res.data.accessToken);
 
           if (res.data.accessToken) {
             const decoded = jwtDecode(res.data.accessToken);
-
+            
+            
             if (decoded._id) {
               handleGetID(decoded._id);
             }

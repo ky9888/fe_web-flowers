@@ -13,8 +13,9 @@ function Auth() {
   const blackUseRef = useRef(null);
   const loginRef = useRef(null);
   const router = useRouter();
-  const { getUserId, setGetUserId } = useCart();
-
+  const { getUserId, setGetUserId,setCartTotalQly } = useCart();
+ console.log("mmm",getUserId);
+ 
   useEffect(() => {
     const handleClickOutside = (event) => {
       const black = blackUseRef.current;
@@ -71,8 +72,9 @@ function Auth() {
   };
 
   const Logout = () => {
-    localStorage.removeItem("accessToken");
+    localStorage.clear();
     setGetUserId(null);
+    setCartTotalQly(0)
     router.push("/");
   };
 
@@ -105,9 +107,9 @@ function Auth() {
           >
             <div className="flex items-center justify-center">
               <span className="text-[15px] max-custom:text-[10px]">
-                {getUserId.userName}
+                {getUserId?.userName}
               </span>
-              <span className="text-[22px] max-custom:hidden">
+              <span className="text-[22px] max-custom:text-[10px]">
                 <FaCaretDown />
               </span>
             </div>

@@ -1,4 +1,6 @@
 "use client";
+import axios from "axios";
+import { jwtDecode } from "jwt-decode";
 import {
   createContext,
   useContext,
@@ -13,6 +15,34 @@ export default function CartContextProvider({ children }) {
   const [cartTotalQty, setCartTotalQly] = useState(0);
   const [cartTotalAmout, setCartTotalAmout] = useState(0);
   const [getUserId, setGetUserId] = useState(null);
+
+  useEffect(() => {
+    const checkToken = async () => {
+      const token = localStorage.getItem("accessToken");
+      const cartProduct = localStorage.getItem("cartItem");
+      console.log("token",token);
+      
+      if (token) {
+        try {
+          const decoded = jwtDecode(token);
+          if(decoded._id){
+            const res = await axios.get(
+              `${process.env.NEXT_PUBLIC_URL_API}/api/auth/getDetailUser/${decoded._id}`
+              
+            );
+            console.log("set",res.data.data.userName);
+            setGetUserId(res.data.data);
+            setCartProducts(JSON.parse(cartProduct))
+          }
+            
+        } catch (err) {
+          console.error("Lỗi khi xác thực token:", err);       
+        }
+      }
+    };
+
+    checkToken(); 
+  }, []);
 
   useEffect(() => {
     const getTotal = () => {
@@ -33,8 +63,8 @@ export default function CartContextProvider({ children }) {
         );
         setCartTotalQly(qty);
         setCartTotalAmout(total);
-      }else{
-           return cartProducts
+      } else {
+        return cartProducts;
       }
     };
     getTotal();
@@ -137,6 +167,7 @@ export default function CartContextProvider({ children }) {
     handleRemoveProducts,
     getUserId,
     setGetUserId,
+    setCartTotalQly
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
