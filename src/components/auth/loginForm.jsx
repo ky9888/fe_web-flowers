@@ -1,5 +1,4 @@
 "use client";
-import Cookies from "js-cookie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useRef, useEffect } from "react";
 import { useFormik } from "formik";

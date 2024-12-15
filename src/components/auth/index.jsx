@@ -14,7 +14,7 @@ function Auth() {
   const loginRef = useRef(null);
   const router = useRouter();
   const { getUserId, setGetUserId,setCartTotalQly } = useCart();
- console.log("mmm",getUserId);
+
  
   useEffect(() => {
     const handleClickOutside = (event) => {

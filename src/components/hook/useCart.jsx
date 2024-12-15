@@ -20,28 +20,25 @@ export default function CartContextProvider({ children }) {
     const checkToken = async () => {
       const token = localStorage.getItem("accessToken");
       const cartProduct = localStorage.getItem("cartItem");
-      console.log("token",token);
-      
+
       if (token) {
         try {
           const decoded = jwtDecode(token);
-          if(decoded._id){
+          if (decoded._id) {
             const res = await axios.get(
               `${process.env.NEXT_PUBLIC_URL_API}/api/auth/getDetailUser/${decoded._id}`
-              
             );
-            console.log("set",res.data.data.userName);
+
             setGetUserId(res.data.data);
-            setCartProducts(JSON.parse(cartProduct))
+            setCartProducts(JSON.parse(cartProduct));
           }
-            
         } catch (err) {
-          console.error("Lỗi khi xác thực token:", err);       
+          console.error("Lỗi khi xác thực token:", err);
         }
       }
     };
 
-    checkToken(); 
+    checkToken();
   }, []);
 
   useEffect(() => {
@@ -167,7 +164,7 @@ export default function CartContextProvider({ children }) {
     handleRemoveProducts,
     getUserId,
     setGetUserId,
-    setCartTotalQly
+    setCartTotalQly,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
