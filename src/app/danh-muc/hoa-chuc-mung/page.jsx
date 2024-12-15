@@ -2,7 +2,7 @@ import TopicProducts from "@/components/topicProducts";
 
 export default async function Home() {
   const res = await fetch(
-    "http://localhost:5000/api/products/getTopicProducts/Hoa Chúc Mừng"
+    `${process.env.NEXT_PUBLIC_URL_API}/api/products/getTopicProducts/Hoa Chúc Mừng`
   );
 
   if (!res.ok) {
