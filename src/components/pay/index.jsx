@@ -101,7 +101,7 @@ export default function ClientPay() {
                   const money = (
                     Number(item.price.replace(/\./g, "")) * item.quantity
                   ).toLocaleString("vi-VN");
-                  console.log("vvvv", money);
+                 
 
                   return (
                     <div
