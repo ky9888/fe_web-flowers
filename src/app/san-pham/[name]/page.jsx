@@ -1,7 +1,7 @@
 import ProductsID from "@/components/products/productsID";
 
 export default async function Home({ params }) {
-  let { name } = params;
+  const { name } = await params; 
   const revertedString = name.replace(/-/g, " ");
 
   const res = await fetch(
