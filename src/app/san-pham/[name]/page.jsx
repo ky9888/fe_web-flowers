@@ -39,7 +39,9 @@ export default function Home({ params: paramsPromise }) {
     fetchData();
   }, [params]);
 
-  
+  if (!data) {
+    return <div>No product data available.</div>;
+  }
 
   return (
     <>
