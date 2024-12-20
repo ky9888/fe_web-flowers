@@ -1,28 +1,51 @@
+"use client";
+import { useEffect, useState } from "react";
 import ProductsID from "@/components/products/productsID";
 
-export default async function Home({ params }) {
-  const { name } = params;
-  const revertedString = name.replace(/-/g, " ");
+export default function Home({ params: paramsPromise }) {
+  const [params, setParams] = useState(null);
+  const [data, setData] = useState(null);
 
-  try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_URL_API}/api/products/getDetailProducts/${revertedString}`
-    );
+  useEffect(() => {
+   
+    const resolveParams = async () => {
+      const resolvedParams = await paramsPromise;
+      setParams(resolvedParams);
+    };
 
-    if (!res.ok) {
-      return <div>Please enter a valid product ID or product not found.</div>;
-    }
+    resolveParams();
+  }, [paramsPromise]);
 
-    const ress = await res.json();
-    const data = ress.data;
+  useEffect(() => {
+    if (!params) return;
 
-    return (
-      <>
-        <ProductsID data={data} />
-      </>
-    );
-  } catch (error) {
-    console.error("Error fetching product details:", error);
-    return <div>Something went wrong. Please try again later.</div>;
+    const revertedString = params.name.replace(/-/g, " ");
+
+    const fetchData = async () => {
+    
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_URL_API}/api/products/getDetailProducts/${revertedString}`
+        );
+
+        if (!res.ok) {
+          throw new Error("Product not found or invalid product ID.");
+        }
+
+        const ress = await res.json();
+        setData(ress.data);
+      
+    };
+
+    fetchData();
+  }, [params]);
+
+  if (!data) {
+    return <div>No product data available.</div>;
   }
+
+  return (
+    <>
+      <ProductsID data={data} />
+    </>
+  );
 }
