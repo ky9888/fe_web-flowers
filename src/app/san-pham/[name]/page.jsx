@@ -10,7 +10,7 @@ export default async function Home({ params }) {
     );
 
     if (!res.ok) {
-      return <div>Please enter a valid product ID or product not found.</div>;
+      throw new Error('Failed to fetch product');
     }
 
     const ress = await res.json();
