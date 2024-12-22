@@ -6,7 +6,7 @@ export default async function Home({ params }) {
 
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_URL_API}/api/products/getDetailProducts/${revertedString}`
+      `https://be-web-flowers.onrender.com/api/products/getDetailProducts/${revertedString}`
     );
 
     if (!res.ok) {
