@@ -24,7 +24,7 @@ export default function ProductsID({ data }) {
       return cartItem.quantity;
     }
     setCartItem((prev) => {
-      return { ...prev, quantity: prev.quantity++ };
+      return { ...prev, quantity: prev.quantity + 1 };
     });
   }, [cartItem.quantity]);
   const handleQtyDecrease = useCallback(() => {
@@ -32,7 +32,7 @@ export default function ProductsID({ data }) {
       return cartItem.quantity;
     }
     setCartItem((prev) => {
-      return { ...prev, quantity: prev.quantity-- };
+      return { ...prev, quantity: prev.quantity - 1 };
     });
   }, [cartItem.quantity]);
 
