@@ -49,7 +49,7 @@ function LoginForm({
     onSubmit: (values) => {
       axios({
         method: "POST",
-        url: `${process.env.NEXT_PUBLIC_URL_API}/api/auth/singin`,
+        url: `https://be-web-flowers.onrender.com/api/auth/singin`,
         data: values,
       })
         .then(function (res) {
