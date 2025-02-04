@@ -14,7 +14,7 @@ export default function ProductsID({ data }) {
     image: data.image1,
     quantity: 1,
   });
-
+ 
   const images = [data.image1, data.image2, data.image3].filter(Boolean);
   const [cartProduct, setCartProduct] = useState({ image: images[0] });
   const [dataSlide, setDataSlide] = useState([]);
@@ -24,7 +24,7 @@ export default function ProductsID({ data }) {
       return cartItem.quantity;
     }
     setCartItem((prev) => {
-      return { ...prev, quantity: prev.quantity++ };
+      return { ...prev, quantity: prev.quantity + 1 };
     });
   }, [cartItem.quantity]);
   const handleQtyDecrease = useCallback(() => {
@@ -32,7 +32,7 @@ export default function ProductsID({ data }) {
       return cartItem.quantity;
     }
     setCartItem((prev) => {
-      return { ...prev, quantity: prev.quantity-- };
+      return { ...prev, quantity: prev.quantity - 1 };
     });
   }, [cartItem.quantity]);
 
@@ -115,7 +115,7 @@ export default function ProductsID({ data }) {
             </div>
             <div className=" flex space-x-2 justify-center items-center mt-5">
               {images &&
-                images.length > 1 &&
+                images.length > 0 &&
                 images.map((item, index) => (
                   <div
                     key={index}

@@ -2,7 +2,6 @@
 
 
 export default function SetQuantity({
-  
   cartItem ,
   handleQtyIncrease,
   handleQtyDecrease,

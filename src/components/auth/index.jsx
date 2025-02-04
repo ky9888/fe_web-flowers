@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef, memo } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaCaretDown } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { FaRegUser } from "react-icons/fa";
@@ -14,6 +14,7 @@ function Auth() {
   const loginRef = useRef(null);
   const router = useRouter();
   const { getUserId, setGetUserId,setCartTotalQly } = useCart();
+
 
  
   useEffect(() => {
@@ -156,4 +157,4 @@ function Auth() {
     </div>
   );
 }
-export default memo(Auth);
+export default Auth;

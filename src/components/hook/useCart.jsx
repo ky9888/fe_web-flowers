@@ -16,11 +16,12 @@ export default function CartContextProvider({ children }) {
   const [cartTotalAmout, setCartTotalAmout] = useState(0);
   const [getUserId, setGetUserId] = useState(null);
 
+
   useEffect(() => {
     const checkToken = async () => {
       const token = localStorage.getItem("accessToken");
       const cartProduct = localStorage.getItem("cartItem");
-
+   
       if (token) {
         try {
           const decoded = jwtDecode(token);
@@ -50,7 +51,7 @@ export default function CartContextProvider({ children }) {
               Number(item.price.replace(/\./g, "")) * item.quantity;
             acc.total += itemTotal;
             acc.qty += item.quantity;
-
+            
             return acc;
           },
           {

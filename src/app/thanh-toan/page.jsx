@@ -1,10 +1,9 @@
-import ClientPay from "@/components/pay"
+import ClientPay from "@/components/pay";
 
-
-export default function Pay(){
-    return(
-        <>
-        <ClientPay/>
-        </>
-    )
+export default function Pay() {
+  return (
+    <>
+      <ClientPay />
+    </>
+  );
 }

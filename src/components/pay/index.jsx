@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useCart } from "../hook/useCart";
 
 export default function ClientPay() {
+  
   const { cartProducts, cartTotalAmout } = useCart();
   return (
     <div>

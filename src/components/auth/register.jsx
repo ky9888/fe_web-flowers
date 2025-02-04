@@ -119,13 +119,13 @@ function RegisterForm({ setIsOpenRegister, isOpenRegister }) {
               type={!visible ? "text" : "password"}
               placeholder="Mật khẩu"
             />
-            <button onClick={() => setVisible(!visible)}>
+            <div onClick={() => setVisible(!visible)}>
               {visible ? (
                 <FontAwesomeIcon icon={faEye} />
               ) : (
                 <FontAwesomeIcon icon={faEyeSlash} />
               )}
-            </button>
+            </div>
           </div>
           {formik.errors.password && (
             <span className="text-red-500 text-[12px] font-normal ">

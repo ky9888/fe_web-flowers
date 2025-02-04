@@ -20,6 +20,7 @@ export default function Search() {
   const debounceTimeoutRef = useRef(null);
   const router = useRouter();
  
+ 
   const fetchData = useCallback(async (value) => {
     try {
       const response = await axios.get(
