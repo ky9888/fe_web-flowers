@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         />
         <CartProvider>
           <Header />
-          <div className="">{children}</div>
+          <div className="">{children}</div>        
           <Footer />
         </CartProvider>
       </body>

@@ -40,7 +40,7 @@ function RegisterForm({ setIsOpenRegister, isOpenRegister }) {
     onSubmit: (values) => {
       axios({
         method: "POST",
-        url: `${process.env.NEXT_PUBLIC_URL_API}/api/auth/singup`,
+        url: `https://be-web-flowers.onrender.com/api/auth/singup`,
         data: values,
       })
         .then(function (res) {
