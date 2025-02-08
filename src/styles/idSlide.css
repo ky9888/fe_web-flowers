@@ -1,0 +1,35 @@
+.slick-arrow {
+  z-index: 10;
+  top: 45%; 
+}
+
+.slick-next {
+  right: 20px;
+}
+
+.slick-prev {
+  left: 10px;
+}
+
+.slick-prev:hover:before,
+.slick-next:hover:before {
+  color: #0056b3; 
+}
+
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 30px; 
+}
+@media (max-width: 550px) {
+  .slick-arrow {
+    z-index: 10; 
+    top: 35%; 
+  }
+}
+@media (max-width: 1024px) {
+  .slick-arrow {
+    z-index: 10; 
+    top: 40%; 
+  }
+}

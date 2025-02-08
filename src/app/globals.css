@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.skeleton .skeleton1, 
+.skeleton .skeleton2, 
+.skeleton .skeleton3 {
+  position: relative; 
+}
+
+
+
+.skeleton .skeleton1::after, 
+.skeleton .skeleton2::after, 
+.skeleton .skeleton3::after {
+  background-color:#dddddd;
+  content: "";
+  position: absolute;
+  width:100%;
+  height:100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #dddddd 25%, #ffffff 50%, #dddddd 75%);
+  background-size: 200% 100%; 
+  animation: skeletonLoading 1.5s infinite;
+}
+
+@keyframes skeletonLoading {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+
+
+
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+ 
