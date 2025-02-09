@@ -68,7 +68,7 @@ export default async function ProductPage({ params }) {
           className="fixed top-0 bg-white bottom-0
         right-0 left-0 flex justify-center items-center "
         >
-          <AiOutlineReload className="h-[10%] w-[10%] animate-spin text-green-700" />
+          <AiOutlineReload className="h-[9%] w-[10%] animate-spin text-green-700" />
         </div>
       )}
     </>
