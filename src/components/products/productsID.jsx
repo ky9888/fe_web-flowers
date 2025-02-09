@@ -6,6 +6,7 @@ import { useState, useEffect, useCallback } from "react";
 import ProductsIDslide from "./productsIDslide";
 import SetQuantity from "./setQuantity";
 import ButtonFlower from "./buttonFlower";
+import Comment from "./comment";
 export default function ProductsID({ data }) {
   const [cartItem, setCartItem] = useState({
     id: data._id,
@@ -256,12 +257,13 @@ export default function ProductsID({ data }) {
             </p>
           </div>
         </div>
-        <div className="mt-20 space-y-4 border-b pb-10">
+        <div className="mt-20 space-y-4 pb-5">
           <p className="bg-green-800 w-[60px] text-white text-center text-[13px] p-1 rounded-full">
             MÔ TẢ
           </p>
           <p className="font-medium">{data.describe}</p>
         </div>
+        <Comment/>
         <div className="mt-3">
           <p className="font-medium text-[25px]">SẢN PHẨM TƯƠNG TỰ</p>
           <ProductsIDslide data={dataSlide} />

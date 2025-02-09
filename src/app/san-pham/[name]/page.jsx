@@ -1,6 +1,7 @@
 import ProductsID from "@/components/products/productsID";
-export const revalidate = 60
-export const dynamicParams = true
+import { AiOutlineReload } from "react-icons/ai";
+export const revalidate = 60;
+export const dynamicParams = true;
 export async function generateStaticParams() {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_URL_API}/api/products/getAllProducts`
@@ -16,8 +17,7 @@ export async function generateStaticParams() {
   const mappedProducts = products.slice(0, 5).map((product) => ({
     name: product.name,
   }));
-  
-   
+
   return mappedProducts;
 }
 
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }) {
   const data = ress.data;
 
   return {
-    title:  decoded,
+    title: decoded,
     description: data.description || "Product details",
   };
 }
@@ -61,7 +61,16 @@ export default async function ProductPage({ params }) {
 
   return (
     <>
-      <ProductsID data={data} />
+      {data ? (
+        <ProductsID data={data} />
+      ) : (
+        <div
+          className="fixed top-0 bg-white bottom-0
+        right-0 left-0 flex justify-center items-center "
+        >
+          <AiOutlineReload className="h-[10%] w-[10%] animate-spin text-green-700" />
+        </div>
+      )}
     </>
   );
 }
