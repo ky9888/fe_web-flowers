@@ -7,7 +7,7 @@ export default function Footer() {
     <motion.div
       initial={{ scale: 0.8, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 1 }}
       className="flex max-lg:block max-custom:mx-5 mx-20 mt-8 pl-6 pb-14 border-t-2 pt-10"
     >
       <div className="w-3/4 flex space-x-6 max-lg:block max-lg:w-full max-lg:space-y-7 max-lg:space-x-0">
