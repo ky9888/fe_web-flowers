@@ -176,7 +176,7 @@ export default function SlideMain() {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5 }}
         onUpdate={(latest) => {
-          if (latest.opacity >= 0.) setIsLoading(false);
+          if (latest.opacity >= 0.3) setIsLoading(false);
         }}
         className="h-[550px] max-custom:h-[170px]  max-lg:h-[310px] relative overflow-hidden "
       >
