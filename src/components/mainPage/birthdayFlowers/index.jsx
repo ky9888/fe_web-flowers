@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
@@ -8,8 +8,9 @@ import anh9 from "../../../../public/images/anh9.jpg";
 import anh10 from "../../../../public/images/anh10.jpg";
 import anh11 from "../../../../public/images/anh11.jpg";
 import Image from "next/image";
+import { motion } from "framer-motion";
 export default function BirthdayFlowers() {
-  const router=useRouter()
+  const router = useRouter();
   const ArrProject = [
     {
       name: "Bó Hoa Cẩm Tú Cầu HSN030",
@@ -33,7 +34,12 @@ export default function BirthdayFlowers() {
     },
   ];
   return (
-    <div className="mt-[100px]">
+    <motion.div
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="mt-[100px]"
+    >
       <div className=" mt-5 space-y-1">
         <p className="text-center text-[25px] text-green-900 font-medium ">
           HOA SINH NHẬT
@@ -77,7 +83,10 @@ export default function BirthdayFlowers() {
           ))}
         </div>
         <div className="flex justify-center text-green-900 ">
-          <Link href={"/danh-muc/hoa-sinh-nhat"} className="text-[16px] group  cursor-pointer mt-2 items-center pt-[1px] pb-[1px] h-full text-center font-medium  transition-all duration-300 ease-in-out hover:-translate-x-2 hover:translate-y-0 rounded-lg border-2 border-white">
+          <Link
+            href={"/danh-muc/hoa-sinh-nhat"}
+            className="text-[16px] group  cursor-pointer mt-2 items-center pt-[1px] pb-[1px] h-full text-center font-medium  transition-all duration-300 ease-in-out hover:-translate-x-2 hover:translate-y-0 rounded-lg border-2 border-white"
+          >
             <div className="flex items-center group relative space-x-2 w-full pt-1 pb-2 px-7">
               <p>Xem thêm</p>
               <p className="absolute right-0 hidden group-hover:block">
@@ -90,6 +99,6 @@ export default function BirthdayFlowers() {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

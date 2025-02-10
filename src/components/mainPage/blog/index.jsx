@@ -1,9 +1,9 @@
-
+"use client"
 import anh12 from "../../../../public/images/anh12.jpg";
 import anh13 from "../../../../public/images/anh13.jpg";
 import anh14 from "../../../../public/images/anh14.jpg";
 import anh15 from "../../../../public/images/anh15.jpg";
-
+import { motion } from "framer-motion";
 
 import Image from "next/image";
 export default function Block() {
@@ -28,7 +28,13 @@ export default function Block() {
     },
   ];
   return (
-    <div id="blog" className="mt-[80px]">
+    <motion.div
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      id="blog"
+      className="mt-[80px]"
+    >
       <div className=" mt-5 space-y-2">
         <p className="text-center text-[35px] text-green-900  tracking-[3px]">
           Blog
@@ -98,8 +104,6 @@ export default function Block() {
           </p>
         </div>
       </div>
-
-     
-    </div>
+    </motion.div>
   );
 }

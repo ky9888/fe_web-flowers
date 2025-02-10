@@ -8,6 +8,7 @@ import anh5 from "../../../../public/images/anh5.jpg";
 import anh6 from "../../../../public/images/anh6.jpg";
 import anh7 from "../../../../public/images/anh7.jpg";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function PopularFlowers() {
   const router = useRouter();
@@ -34,7 +35,12 @@ export default function PopularFlowers() {
     },
   ];
   return (
-    <div className="h-full">
+    <motion.div
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="h-full"
+    >
       <div className=" mt-5 space-y-2">
         <p className="text-center text-[25px] max-custom:text-[20px] text-green-900 font-medium ">
           MẪU HOA PHỔ BIẾN
@@ -78,7 +84,10 @@ export default function PopularFlowers() {
           ))}
         </div>
         <div className="flex justify-center text-white ">
-          <Link href={"/san-pham"} className="text-[16px] cursor-pointer mt-2 flex justify-center items-center pt-[1px] pb-[1px] h-full text-center font-medium bg-green-800 hover:bg-green-900 rounded-lg border-2 border-white">
+          <Link
+            href={"/san-pham"}
+            className="text-[16px] cursor-pointer mt-2 flex justify-center items-center pt-[1px] pb-[1px] h-full text-center font-medium bg-green-800 hover:bg-green-900 rounded-lg border-2 border-white"
+          >
             <div className="flex items-center group relative  space-x-2 w-full pt-1 pb-2  px-7 transition-all duration-300 ease-in-out hover:-translate-x-2 hover:translate-y-0">
               <p>Đặt Hoa Online Hôm Nay</p>
               <p className="absolute right-0 hidden group-hover:block ">
@@ -88,6 +97,6 @@ export default function PopularFlowers() {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

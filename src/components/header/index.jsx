@@ -14,6 +14,7 @@ import { useRouter } from "next/navigation";
 import { FaChevronDown } from "react-icons/fa6";
 import { FaAngleUp } from "react-icons/fa6";
 import { CiCircleRemove } from "react-icons/ci";
+import { motion } from "framer-motion";
 export default function Header() {
   const [isScroll, setIsScroll] = useState(false);
   const [isOpenSN, setIsOpenSN] = useState(false);
@@ -30,7 +31,6 @@ export default function Header() {
   const loginScrollRef = useRef(null);
   const loginRef = useRef(null);
   const blackScrollRef = useRef(null);
-
 
   const handleIsOpen = () => {
     document.body.style.overflow = "auto";
@@ -172,7 +172,13 @@ export default function Header() {
   }, []);
 
   return (
-    <div className="relative">
+    <motion.div
+      initial={{ opacity: 0,y: -50 }}
+      animate={{ opacity: 1,y: 0 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.5 }}
+      className="relative"
+    >
       <div ref={blackUseRef}></div>
       {/* Header cố định */}
       <div className="flex   items-center justify-between z-50 px-[4%] max-xl:px-2 max-custom:px-2 py-4 bg-white w-full border-b">
@@ -346,28 +352,37 @@ export default function Header() {
               <div className="absolute left-[-10%]   text-slate-600  w-[300px] bg-none py-5 px-3 z-10 pt-9  opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
                 <div className="top-[30px]  z-10 absolute  right-[50%] left-10 transform translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-white"></div>
                 <ul className="bg-white py-4 rounded-sm px-2 shadow-[5px_5px_30px_2px_rgba(0,0,0,0.5)] ">
-                  <li                  
-                    className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl"
-                  >
-                    <a href="/danh-muc/hoa-sinh-nhat/sang-trong" className=" py-2  pr-[160px]">Sang Trọng</a>
+                  <li className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl">
+                    <a
+                      href="/danh-muc/hoa-sinh-nhat/sang-trong"
+                      className=" py-2  pr-[160px]"
+                    >
+                      Sang Trọng
+                    </a>
                   </li>
-                  <li
-                   
-                    className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl"
-                  >
-                    <a href="/danh-muc/hoa-sinh-nhat/tang-nguoi-yeu" className=" py-2  pr-[125px]">Tặng Người Yêu </a>
+                  <li className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl">
+                    <a
+                      href="/danh-muc/hoa-sinh-nhat/tang-nguoi-yeu"
+                      className=" py-2  pr-[125px]"
+                    >
+                      Tặng Người Yêu{" "}
+                    </a>
                   </li>
-                  <li
-                    
-                    className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl"
-                  >
-                    <a href="/danh-muc/hoa-sinh-nhat/tang-ban" className=" py-2  pr-[175px]">Tặng Bạn</a>
+                  <li className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl">
+                    <a
+                      href="/danh-muc/hoa-sinh-nhat/tang-ban"
+                      className=" py-2  pr-[175px]"
+                    >
+                      Tặng Bạn
+                    </a>
                   </li>
-                  <li
-                    
-                    className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl"
-                  >
-                    <a href="/danh-muc/hoa-sinh-nhat/tang-me" className=" py-2  pr-[175px]">Tặng Mẹ</a>
+                  <li className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl">
+                    <a
+                      href="/danh-muc/hoa-sinh-nhat/tang-me"
+                      className=" py-2  pr-[175px]"
+                    >
+                      Tặng Mẹ
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -394,17 +409,21 @@ export default function Header() {
               <div className="absolute left-[-10%]   text-slate-600  w-[290px] bg-none py-5 px-3 z-10 pt-9 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
                 <div className="top-[30px]  z-10 absolute  right-[50%] left-10 transform translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-white"></div>
                 <ul className="bg-white py-4 rounded-sm px-2 shadow-[5px_5px_30px_2px_rgba(0,0,0,0.5)] ">
-                  <li
-
-                    className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl"
-                  >
-                    <a href="/danh-muc/hoa-chuc-mung/de-ban" className=" py-2   pr-[180px]">Để Bàn</a>
+                  <li className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl">
+                    <a
+                      href="/danh-muc/hoa-chuc-mung/de-ban"
+                      className=" py-2   pr-[180px]"
+                    >
+                      Để Bàn
+                    </a>
                   </li>
-                  <li
-                   
-                    className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl"
-                  >
-                     <a href="/danh-muc/hoa-chuc-mung/lang-hoa" className=" py-2   pr-[165px]">Lẵng Hoa</a>
+                  <li className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl">
+                    <a
+                      href="/danh-muc/hoa-chuc-mung/lang-hoa"
+                      className=" py-2   pr-[165px]"
+                    >
+                      Lẵng Hoa
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -645,7 +664,7 @@ export default function Header() {
             />
           </Link>
           <div className="flex items-center space-x-4 max-lg:hidden">
-          <div
+            <div
               className={`relative group ${
                 [
                   "/danh-muc/hoa-sinh-nhat",
@@ -668,28 +687,37 @@ export default function Header() {
               <div className="absolute left-[-10%]   text-slate-600  w-[300px] bg-none py-5 px-3 z-10 pt-9  opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
                 <div className="top-[30px]  z-10 absolute  right-[50%] left-10 transform translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-white"></div>
                 <ul className="bg-white py-4 rounded-sm px-2 shadow-[5px_5px_30px_2px_rgba(0,0,0,0.5)] ">
-                  <li                  
-                    className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl"
-                  >
-                    <a href="/danh-muc/hoa-sinh-nhat/sang-trong" className=" py-2  pr-[160px]">Sang Trọng</a>
+                  <li className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl">
+                    <a
+                      href="/danh-muc/hoa-sinh-nhat/sang-trong"
+                      className=" py-2  pr-[160px]"
+                    >
+                      Sang Trọng
+                    </a>
                   </li>
-                  <li
-                   
-                    className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl"
-                  >
-                    <a href="/danh-muc/hoa-sinh-nhat/tang-nguoi-yeu" className=" py-2  pr-[125px]">Tặng Người Yêu </a>
+                  <li className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl">
+                    <a
+                      href="/danh-muc/hoa-sinh-nhat/tang-nguoi-yeu"
+                      className=" py-2  pr-[125px]"
+                    >
+                      Tặng Người Yêu{" "}
+                    </a>
                   </li>
-                  <li
-                    
-                    className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl"
-                  >
-                    <a href="/danh-muc/hoa-sinh-nhat/tang-ban" className=" py-2  pr-[175px]">Tặng Bạn</a>
+                  <li className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl">
+                    <a
+                      href="/danh-muc/hoa-sinh-nhat/tang-ban"
+                      className=" py-2  pr-[175px]"
+                    >
+                      Tặng Bạn
+                    </a>
                   </li>
-                  <li
-                    
-                    className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl"
-                  >
-                    <a href="/danh-muc/hoa-sinh-nhat/tang-me" className=" py-2  pr-[175px]">Tặng Mẹ</a>
+                  <li className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl">
+                    <a
+                      href="/danh-muc/hoa-sinh-nhat/tang-me"
+                      className=" py-2  pr-[175px]"
+                    >
+                      Tặng Mẹ
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -716,17 +744,21 @@ export default function Header() {
               <div className="absolute left-[-10%]   text-slate-600  w-[290px] bg-none py-5 px-3 z-10 pt-9 opacity-0 invisible group-hover:visible group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
                 <div className="top-[30px]  z-10 absolute  right-[50%] left-10 transform translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-white"></div>
                 <ul className="bg-white py-4 rounded-sm px-2 shadow-[5px_5px_30px_2px_rgba(0,0,0,0.5)] ">
-                  <li
-
-                    className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl"
-                  >
-                    <a href="/danh-muc/hoa-chuc-mung/de-ban" className=" py-2   pr-[180px]">Để Bàn</a>
+                  <li className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl">
+                    <a
+                      href="/danh-muc/hoa-chuc-mung/de-ban"
+                      className=" py-2   pr-[180px]"
+                    >
+                      Để Bàn
+                    </a>
                   </li>
-                  <li
-                   
-                    className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl"
-                  >
-                     <a href="/danh-muc/hoa-chuc-mung/lang-hoa" className=" py-2   pr-[165px]">Lẵng Hoa</a>
+                  <li className="p-2 hover:bg-green-800 hover:text-white cursor-pointer rounded-xl">
+                    <a
+                      href="/danh-muc/hoa-chuc-mung/lang-hoa"
+                      className=" py-2   pr-[165px]"
+                    >
+                      Lẵng Hoa
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -783,7 +815,6 @@ export default function Header() {
               <Search />
             </li>
             <li>
-             
               <Auth />
             </li>
             <Link
@@ -798,6 +829,6 @@ export default function Header() {
           </ul>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

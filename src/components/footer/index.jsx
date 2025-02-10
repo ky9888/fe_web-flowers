@@ -1,6 +1,15 @@
+"use client"
+
+import { motion } from "framer-motion";
+
 export default function Footer() {
   return (
-    <div className="flex max-lg:block max-custom:mx-5 mx-20 mt-8 pl-6 pb-14 border-t-2 pt-10">
+    <motion.div
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="flex max-lg:block max-custom:mx-5 mx-20 mt-8 pl-6 pb-14 border-t-2 pt-10"
+    >
       <div className="w-3/4 flex space-x-6 max-lg:block max-lg:w-full max-lg:space-y-7 max-lg:space-x-0">
         <div className="w-1/3 text-[15px] space-y-2 max-lg:w-full ">
           <p className="font-medium text-[17px]">Thông Tin Liên Hệ</p>
@@ -47,6 +56,6 @@ export default function Footer() {
       <div>
         <p className="font-medium text-[17px] max-lg:mt-4">FANPAGE</p>
       </div>
-    </div>
+    </motion.div>
   );
 }
