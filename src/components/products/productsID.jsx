@@ -19,7 +19,7 @@ export default function ProductsID({ data }) {
   const images = [data.image1, data.image2, data.image3].filter(Boolean);
   const [cartProduct, setCartProduct] = useState({ image: images[0] });
   const [dataSlide, setDataSlide] = useState([]);
-
+  
   const handleQtyIncrease = useCallback(() => {
     if (cartItem.quantity === 99) {
       return cartItem.quantity;
@@ -132,7 +132,7 @@ export default function ProductsID({ data }) {
                       className={` object-cover object-center cursor-pointer transition-all duration-500  rounded-lg ${
                         cartProduct.image === item
                           ? "opacity-100"
-                          : "opacity-50"
+                          : "opacity-50 hover:opacity-100"
                       }`}
                     />
                   </div>
@@ -140,7 +140,7 @@ export default function ProductsID({ data }) {
             </div>
           </div>
           <div className="flex w-3/5 justify-center max-lg:hidden space-x-3">
-            <div className="flex flex-col space-y-4 ">
+            <div className="flex flex-col space-y-4  ">
               {images &&
                 images.length > 1 &&
                 images.map((item, index) => (
@@ -155,17 +155,17 @@ export default function ProductsID({ data }) {
                       width={130}
                       height={50}
                       quality={100}
-                      className={` object-cover object-center cursor-pointer transition-all duration-500  rounded-lg ${
-                        cartProduct.image === item
+                      className={`  object-cover object-center cursor-pointer transition-all duration-500  rounded-lg ${
+                        cartProduct?.image === item
                           ? "opacity-100"
-                          : "opacity-50"
-                      }`}
+                          : "opacity-50 hover:opacity-100"
+                      } `}
                     />
                   </div>
                 ))}
             </div>
 
-            <div className=" flex justify-center ">
+            <div className=" flex justify-center w-[75%]">
               <Image
                 src={cartProduct.image}
                 alt={data.name}

@@ -172,6 +172,8 @@ export default function CartContextProvider({ children }) {
 }
 export const useCart = () => {
   const context = useContext(CartContext);
+  
+  
 
   if (context === null) {
     throw new Error("lỗi");
